@@ -7,20 +7,22 @@
  - Angular Directive: *TBA*
  - Angular Pipe: *TBA*
 
----
-
-### Screenshots:
+## Screenshots:
 ![add new item dialog](https://xpasza.gallerycdn.vsassets.io/extensions/xpasza/angular4itemtemplates/1.5/1500990609347/272394/1/add-new-item-v1.2.png)
+
+---
 
 ![add new angular component dialog](https://xpasza.gallerycdn.vsassets.io/extensions/xpasza/angular4itemtemplates/1.5/1500990609347/272393/1/angular-component-wizard-v1.2.png)
 
-![example angular component class text](https://xpasza.gallerycdn.vsassets.io/extensions/xpasza/angular4itemtemplates/1.5/1500990609347/272320/1/angular-component-class.png)
+---
 
-![solution explorer with new angular component](https://xpasza.gallerycdn.vsassets.io/extensions/xpasza/angular4itemtemplates/1.5/1500990609347/272356/1/angular-component-files-v1.1.png)
+![example angular component class text](https://xpasza.gallerycdn.vsassets.io/extensions/xpasza/angular4itemtemplates/1.5/1500990609347/272320/1/angular-component-class.png)
 
 ---
 
-### Changelog:
+![solution explorer with new angular component](https://xpasza.gallerycdn.vsassets.io/extensions/xpasza/angular4itemtemplates/1.5/1500990609347/272356/1/angular-component-files-v1.1.png)
+
+## Changelog:
 - v1.6
    - template for Angular Service
    - use dash as separator in file names
