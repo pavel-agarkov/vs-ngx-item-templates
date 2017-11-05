@@ -12,7 +12,7 @@
     <TemplateGroupID>AspNetCore</TemplateGroupID>
     <TemplateID>AspNetCore.Angular.Module-{6cc26e42-a715-436e-96c1-7e683de6e4e3}</TemplateID>
     <NumberOfParentCategoriesToRollUp>2</NumberOfParentCategoriesToRollUp>
-    <SortOrder>150</SortOrder>
+    <SortOrder>140</SortOrder>
     <ShowByDefault>false</ShowByDefault>
     <Icon>Angular.ico</Icon>
   </TemplateData>
