@@ -7,6 +7,7 @@
 Creates *.html/*.ts/*.css/*.scss/*.less/*.spec.ts files for Angular components in a new separate folder.
 Creates *.module.ts for Angular modules.
 Creates *.service.ts for Angular services.</Description>
+        <MoreInfo>https://github.com/pavel-agarkov/vs-ngx-item-templates</MoreInfo>
         <License>LICENSE</License>
         <ReleaseNotes>release-notes.txt</ReleaseNotes>
         <Icon>Angular.ico</Icon>

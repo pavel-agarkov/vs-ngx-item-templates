@@ -6,7 +6,7 @@
         xmlns:vs="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.15.0"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:AngularWizards.AngularComponent"
-        mc:Ignorable="d" Title="Add new Angular 4 component"
+        mc:Ignorable="d" Title="Add new Angular component"
         WindowStartupLocation="CenterScreen" FontSize="14" Icon="../Angular.ico"
         MinWidth="450" MinHeight="400" SizeToContent="WidthAndHeight"
         Background="{DynamicResource {x:Static vs:EnvironmentColors.PanelGradientBrushKey}}"
