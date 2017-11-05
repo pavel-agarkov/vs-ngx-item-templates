@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="Angular4ItemTemplates.PavelAgarkov.c3c298b9-c6a8-4a6a-9398-6ce64d197314" Version="1.6" Language="en-US" Publisher="Pavel Agarkov" />
+        <Identity Id="Angular4ItemTemplates.PavelAgarkov.c3c298b9-c6a8-4a6a-9398-6ce64d197314" Version="1.6.1" Language="en-US" Publisher="Pavel Agarkov" />
         <DisplayName>Angular Item Templates</DisplayName>
         <Description xml:space="preserve">Item Templates for Angular 4/5.
 Creates *.html/*.ts/*.css/*.scss/*.less/*.spec.ts files for Angular components in a new separate folder.

@@ -26,6 +26,7 @@
 - v1.6
    - template for Angular Service
    - use dash as separator in file names
+   - web/folder project type support
 
 - v1.5
    - template for Angular Module

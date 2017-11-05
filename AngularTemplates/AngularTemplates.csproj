@@ -64,7 +64,7 @@
     <None Include="component.component.scss" />
   </ItemGroup>
   <ItemGroup>
-    <VSTemplate Include="AngularComponentTemplate.vstemplate">
+    <VSTemplate Include="Core.ComponentTemplate.vstemplate">
       <SubType>Designer</SubType>
       <OutputSubPath>ASP.NET Core\Web\Angular</OutputSubPath>
     </VSTemplate>
@@ -84,27 +84,53 @@
     <Content Include="Angular.ico">
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <VSTemplate Include="AngularServiceTemplate.vstemplate">
+    <VSTemplate Include="Web.ServiceTemplate.vstemplate">
+      <SubType>Designer</SubType>
+    </VSTemplate>
+    <VSTemplate Include="Web.ModuleTemplate.vstemplate">
+      <SubType>Designer</SubType>
+    </VSTemplate>
+    <VSTemplate Include="Web.ComponentTemplate.vstemplate">
+      <SubType>Designer</SubType>
+      <OutputSubPath>CSharp</OutputSubPath>
+    </VSTemplate>
+    <VSTemplate Include="Web.ComponentSpecTemplate.vstemplate">
+      <SubType>Designer</SubType>
+      <OutputSubPath>CSharp</OutputSubPath>
+    </VSTemplate>
+    <VSTemplate Include="Web.ComponentScssTemplate.vstemplate">
+      <SubType>Designer</SubType>
+      <OutputSubPath>CSharp</OutputSubPath>
+    </VSTemplate>
+    <VSTemplate Include="Web.ComponentLessTemplate.vstemplate">
+      <SubType>Designer</SubType>
+      <OutputSubPath>CSharp</OutputSubPath>
+    </VSTemplate>
+    <VSTemplate Include="Web.ComponentCssTemplate.vstemplate">
+      <SubType>Designer</SubType>
+      <OutputSubPath>CSharp</OutputSubPath>
+    </VSTemplate>
+    <VSTemplate Include="Core.ServiceTemplate.vstemplate">
       <SubType>Designer</SubType>
       <OutputSubPath>ASP.NET Core\Web\Angular</OutputSubPath>
     </VSTemplate>
-    <VSTemplate Include="AngularModuleTemplate.vstemplate">
+    <VSTemplate Include="Core.ModuleTemplate.vstemplate">
       <SubType>Designer</SubType>
       <OutputSubPath>ASP.NET Core\Web\Angular</OutputSubPath>
     </VSTemplate>
-    <VSTemplate Include="AngularComponentLessTemplate.vstemplate">
+    <VSTemplate Include="Core.ComponentLessTemplate.vstemplate">
       <SubType>Designer</SubType>
       <OutputSubPath>ASP.NET Core\Web\Angular</OutputSubPath>
     </VSTemplate>
-    <VSTemplate Include="AngularComponentScssTemplate.vstemplate">
+    <VSTemplate Include="Core.ComponentScssTemplate.vstemplate">
       <SubType>Designer</SubType>
       <OutputSubPath>ASP.NET Core\Web\Angular</OutputSubPath>
     </VSTemplate>
-    <VSTemplate Include="AngularComponentCssTemplate.vstemplate">
+    <VSTemplate Include="Core.ComponentCssTemplate.vstemplate">
       <SubType>Designer</SubType>
       <OutputSubPath>ASP.NET Core\Web\Angular</OutputSubPath>
     </VSTemplate>
-    <VSTemplate Include="AngularComponentSpecTemplate.vstemplate">
+    <VSTemplate Include="Core.ComponentSpecTemplate.vstemplate">
       <SubType>Designer</SubType>
       <OutputSubPath>ASP.NET Core\Web\Angular</OutputSubPath>
     </VSTemplate>

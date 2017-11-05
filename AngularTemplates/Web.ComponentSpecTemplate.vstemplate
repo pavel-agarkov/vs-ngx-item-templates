@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0"
+            xmlns="http://schemas.microsoft.com/developer/vstemplate/2005"
+            xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010"
+            Type="Item">
+  <TemplateData>
+    <DefaultName>my.component</DefaultName>
+    <Name>Angular Component Spec</Name>
+    <Description>Creates Angular 4/5 component tests/spec file</Description>
+    <ProjectType>Web</ProjectType>
+    <ProjectSubType>CSharp</ProjectSubType>
+    <TemplateID>AspNetCore.Angular.Component.Spec-{6cc26e42-a715-436e-96c1-7e689de6e4e3}</TemplateID>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <SortOrder>104</SortOrder>
+    <ShowByDefault>true</ShowByDefault>
+    <Icon>Angular.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem SubType="" TargetFileName="$compFolderName$$compTemplateFileName$" ReplaceParameters="true">component.component.html</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$compFolderName$$compClassFileName$" ReplaceParameters="true">component.component.ts</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$compFolderName$$compStyleFileName$" ReplaceParameters="true">component.component.scss</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$compFolderName$$compTestFileName$" ReplaceParameters="true">component.component.spec.ts</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>AngularWizards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1375f77bdf30b87e</Assembly>
+    <FullClassName>AngularWizards.AngularComponent.AngularComponentSpecWizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>
