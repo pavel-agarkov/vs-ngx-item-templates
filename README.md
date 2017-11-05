@@ -1,6 +1,8 @@
-![Angular](https://xpasza.gallerycdn.vsassets.io/extensions/xpasza/angular4itemtemplates/1.5/1500990609347/Microsoft.VisualStudio.Services.Icons.Default) | Angular 4/5 Item Templates<br/>*for Visual Studion 2017*<br/>ASP.NET Core | [Visual<br/>Studio<br/>Marketplace](https://marketplace.visualstudio.com/items?itemName=xpasza.Angular4ItemTemplates)
----|---|---
-### This extension adds templates for the following Angular items:
+
+ ![Angular](https://xpasza.gallerycdn.vsassets.io/extensions/xpasza/angular4itemtemplates/1.5/1500990609347/Microsoft.VisualStudio.Services.Icons.Default) | [Angular](https://angular.io/) 4/5 Item Templates<br/>*for [Visual Studio](https://www.visualstudio.com/vs) 2017*<br/>ASP.NET Core | [Visual<br/>Studio<br/>Marketplace](https://marketplace.visualstudio.com/items?itemName=xpasza.Angular4ItemTemplates)
+:---:|:---:|:---:
+
+### This extension adds Visual Studio templates for the following Angular items:
  - **Angular Component**: .html / .ts / .css | .scss | .less / .spec.ts
  - **Angular Service**: *.service.ts
  - **Angular Module**: *.module.ts
