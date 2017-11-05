@@ -1,4 +1,4 @@
-![Angular](https://xpasza.gallerycdn.vsassets.io/extensions/xpasza/angular4itemtemplates/1.5/1500990609347/Microsoft.VisualStudio.Services.Icons.Default) | Angular 4/5 Item Templates<br/>*for Visual Studion 2017* | [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=xpasza.Angular4ItemTemplates)
+![Angular](https://xpasza.gallerycdn.vsassets.io/extensions/xpasza/angular4itemtemplates/1.5/1500990609347/Microsoft.VisualStudio.Services.Icons.Default) | Angular 4/5 Item Templates<br/>*for Visual Studion 2017* | [Visual<br/>Studio<br/>Marketplace](https://marketplace.visualstudio.com/items?itemName=xpasza.Angular4ItemTemplates)
 ---|---|---
 ### This extension adds templates for the following Angular items:
  - **Angular Component**: .html / .ts / .css | .scss | .less / .spec.ts
@@ -9,7 +9,7 @@
 
 ---
 
-## Screenshots:
+### Screenshots:
 ![add new item dialog](https://xpasza.gallerycdn.vsassets.io/extensions/xpasza/angular4itemtemplates/1.5/1500990609347/272394/1/add-new-item-v1.2.png)
 
 ![add new angular component dialog](https://xpasza.gallerycdn.vsassets.io/extensions/xpasza/angular4itemtemplates/1.5/1500990609347/272393/1/angular-component-wizard-v1.2.png)
@@ -20,7 +20,7 @@
 
 ---
 
-## Changelog:
+### Changelog:
 - v1.6
    - template for Angular Service
    - use dash as separator in file names
@@ -35,7 +35,7 @@
 - v1.3
    - reference to jasmine typings in spec file<br/>
      you need to install jasmine typings in order to use it
-     > npm install @types/jasmine --save-dev
+     > `npm install @types/jasmine --save-dev`
 
 - v1.2
    - extension remembers you preferences
