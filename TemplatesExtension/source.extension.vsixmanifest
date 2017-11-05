@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="Angular4ItemTemplates.PavelAgarkov.c3c298b9-c6a8-4a6a-9398-6ce64d197314" Version="1.6" Language="en-US" Publisher="Pavel Agarkov" />
+        <DisplayName>Angular Item Templates</DisplayName>
+        <Description xml:space="preserve">Item Templates for Angular 4/5.
+Creates *.html/*.ts/*.css/*.scss/*.less/*.spec.ts files for Angular components in a new separate folder.
+Creates *.module.ts for Angular modules.
+Creates *.service.ts for Angular services.</Description>
+        <License>LICENSE</License>
+        <ReleaseNotes>release-notes.txt</ReleaseNotes>
+        <Icon>Angular.ico</Icon>
+        <PreviewImage>preview.png</PreviewImage>
+        <Tags>angular, angular 4, angular 5, ASP.NET Core, ngx</Tags>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0]" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    </Dependencies>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="AngularTemplates" d:TargetPath="|AngularTemplates;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
+        <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="AngularWizards" d:VsixSubPath="Wizards" Path="|AngularWizards|" AssemblyName="|AngularWizards;AssemblyName|" />
+    </Assets>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+</PackageManifest>

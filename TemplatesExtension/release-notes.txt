@@ -1,0 +1,29 @@
+﻿v1.6
+ - template for Angular Service
+ - use dash as separator in file names
+
+v1.5
+ - template for Angular Module
+
+v1.4
+ - preferences remembered on a per-project basis
+ - component selector prefix also remembered
+
+v1.3
+ - reference to jasmine typings in spec file
+   you need to install jasmine typings in order to use it
+   > npm install @types/jasmine --save-dev
+
+v1.2
+ - extension remembers you preferences
+ - shortcuts for stylesheet and spec files
+ - stylesheet language can be specified
+
+v1.1
+ - tests file with first test
+ - every component file can be skipped
+ - component created in a separate folder by default
+ - you can add additional files later into the existing component folder
+
+v1.0
+ - beta
