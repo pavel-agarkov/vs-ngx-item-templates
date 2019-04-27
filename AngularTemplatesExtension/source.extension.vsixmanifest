@@ -15,9 +15,9 @@ Creates *.service.ts for Angular services.</Description>
         <Tags>angular, angular 4, angular 5, ASP.NET Core, ngx</Tags>
     </Metadata>
     <Installation>
-        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,16.0)" />
-        <InstallationTarget Version="[15.0,16.0)" Id="Microsoft.VisualStudio.Pro" />
-        <InstallationTarget Version="[15.0,16.0)" Id="Microsoft.VisualStudio.Enterprise" />
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,17.0)" />
+        <InstallationTarget Version="[15.0,17.0)" Id="Microsoft.VisualStudio.Pro" />
+        <InstallationTarget Version="[15.0,17.0)" Id="Microsoft.VisualStudio.Enterprise" />
     </Installation>
     <Dependencies>
         <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
@@ -27,6 +27,6 @@ Creates *.service.ts for Angular services.</Description>
         <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="AngularWizards" d:VsixSubPath="Wizards" Path="|AngularWizards|" AssemblyName="|AngularWizards;AssemblyName|" />
     </Assets>
     <Prerequisites>
-        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,)" DisplayName="Visual Studio core editor" />
     </Prerequisites>
 </PackageManifest>
