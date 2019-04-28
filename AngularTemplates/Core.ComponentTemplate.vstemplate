@@ -6,7 +6,7 @@
   <TemplateData>
     <DefaultName>component</DefaultName>
     <Name>Angular Component</Name>
-    <Description>Creates Angular 4/5 component with the following optional files:
+    <Description>Creates Angular 4+ component with the following optional files:
 *.component.html
 *.component.ts
 *.component.scss/.less/.css
@@ -28,7 +28,7 @@
     <ProjectItem SubType="" TargetFileName="$compFolderName$$compTestFileName$" ReplaceParameters="true">component.component.spec.ts</ProjectItem>
   </TemplateContent>
   <WizardExtension>
-    <Assembly>AngularWizards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1375f77bdf30b87e</Assembly>
+    <Assembly>AngularWizards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=27dc356ccc4904c6</Assembly>
     <FullClassName>AngularWizards.AngularComponent.AngularComponentWizard</FullClassName>
   </WizardExtension>
 </VSTemplate>

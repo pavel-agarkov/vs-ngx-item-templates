@@ -1,17 +1,14 @@
 ﻿using EnvDTE;
+using Microsoft.VisualStudio.Settings;
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Settings;
 using Microsoft.VisualStudio.TemplateWizard;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using Microsoft.VisualStudio.Settings;
-using Microsoft.VisualStudio.Shell.Settings;
 using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace AngularWizards.AngularComponent
 {
@@ -24,10 +21,11 @@ namespace AngularWizards.AngularComponent
             Style,
             Test
         }
-        const string rootSettingsCollection = "Web\\Angular";
+
+        private const string rootSettingsCollection = "Web\\Angular";
         protected string projectSettingsCollection = "";
-        const string node_modules = "node_modules";
-        const string component = "component";
+        private const string node_modules = "node_modules";
+        private const string component = "component";
         protected readonly Dictionary<ComponentFile, string> fileNames = new Dictionary<ComponentFile, string>
         {
             { ComponentFile.Template, $"{component}.{component}.html" },
@@ -71,12 +69,12 @@ namespace AngularWizards.AngularComponent
                 }
                 var wnd = new AngularComponentWizardWindow();
                 wnd.compName.Text = itemName;
-                ReadSettings(wnd, projectFullName);
-                InitWizard(wnd, automationObject, replacementsDictionary, runKind, customParams);
+                this.ReadSettings(wnd, projectFullName);
+                this.InitWizard(wnd, automationObject, replacementsDictionary, runKind, customParams);
                 success = wnd.ShowDialog();
                 if (success == true)
                 {
-                    SaveSettings(wnd, projectFullName);
+                    this.SaveSettings(wnd, projectFullName);
                     if (wnd.createCompFolder.IsChecked != true)
                     {
                         wnd.compFolderName.Text = "";
@@ -101,16 +99,17 @@ namespace AngularWizards.AngularComponent
                     replacementsDictionary.Add($"${nameof(wnd.compStyleFileName)}$", wnd.compStyleFileName.Text);
                     replacementsDictionary.Add($"${nameof(wnd.compTestFileName)}$", wnd.compTestFileName.Text);
 
-                    files.Add(fileNames[ComponentFile.Class], wnd.createCompClassFile.IsChecked.GetValueOrDefault());
-                    files.Add(fileNames[ComponentFile.Template], wnd.createCompTemplateFile.IsChecked.GetValueOrDefault());
-                    files.Add(fileNames[ComponentFile.Style], wnd.createCompStyleFile.IsChecked.GetValueOrDefault());
-                    files.Add(fileNames[ComponentFile.Test], wnd.createCompTestFile.IsChecked.GetValueOrDefault());
+                    this.files.Add(this.fileNames[ComponentFile.Class], wnd.createCompClassFile.IsChecked.GetValueOrDefault());
+                    this.files.Add(this.fileNames[ComponentFile.Template], wnd.createCompTemplateFile.IsChecked.GetValueOrDefault());
+                    this.files.Add(this.fileNames[ComponentFile.Style], wnd.createCompStyleFile.IsChecked.GetValueOrDefault());
+                    this.files.Add(this.fileNames[ComponentFile.Test], wnd.createCompTestFile.IsChecked.GetValueOrDefault());
                 }
             }
             catch (Exception ex)
             {
                 success = false;
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace,
+                    "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             if (success != true)
             {
@@ -152,65 +151,65 @@ namespace AngularWizards.AngularComponent
 
         public bool ShouldAddProjectItem(string filePath)
         {
-            return files.Keys.Contains(filePath) && files[filePath];
+            return this.files.Keys.Contains(filePath) && this.files[filePath];
         }
 
         protected virtual void ReadSettings(AngularComponentWizardWindow wnd, string projectFullName)
         {
-            var store = GetProjectSettingsStore(projectFullName);
-            if (store.PropertyExists(projectSettingsCollection, nameof(wnd.compStyleLanguage)))
+            var store = this.GetProjectSettingsStore(projectFullName);
+            if (store.PropertyExists(this.projectSettingsCollection, nameof(wnd.compStyleLanguage)))
             {
-                var styleLanguage = store.GetString(projectSettingsCollection, nameof(wnd.compStyleLanguage));
+                var styleLanguage = store.GetString(this.projectSettingsCollection, nameof(wnd.compStyleLanguage));
                 if (Enum.TryParse<StylesheetLanguage>(styleLanguage, out var result))
                 {
                     wnd.compStyleLanguage.SelectedValue = result;
                     wnd.UpdateFields();
                 }
             }
-            if (store.PropertyExists(projectSettingsCollection, nameof(wnd.compSelectorPrefix)))
+            if (store.PropertyExists(this.projectSettingsCollection, nameof(wnd.compSelectorPrefix)))
             {
-                wnd.compSelectorPrefix.Text = store.GetString(projectSettingsCollection, nameof(wnd.compSelectorPrefix));
+                wnd.compSelectorPrefix.Text = store.GetString(this.projectSettingsCollection, nameof(wnd.compSelectorPrefix));
             }
-            if (store.PropertyExists(projectSettingsCollection, nameof(wnd.createCompClassFile)))
+            if (store.PropertyExists(this.projectSettingsCollection, nameof(wnd.createCompClassFile)))
             {
-                wnd.createCompClassFile.IsChecked = store.GetBoolean(projectSettingsCollection, nameof(wnd.createCompClassFile));
+                wnd.createCompClassFile.IsChecked = store.GetBoolean(this.projectSettingsCollection, nameof(wnd.createCompClassFile));
             }
-            if (store.PropertyExists(projectSettingsCollection, nameof(wnd.createCompFolder)))
+            if (store.PropertyExists(this.projectSettingsCollection, nameof(wnd.createCompFolder)))
             {
-                wnd.createCompFolder.IsChecked = store.GetBoolean(projectSettingsCollection, nameof(wnd.createCompFolder));
+                wnd.createCompFolder.IsChecked = store.GetBoolean(this.projectSettingsCollection, nameof(wnd.createCompFolder));
             }
-            if (store.PropertyExists(projectSettingsCollection, nameof(wnd.createCompStyleFile)))
+            if (store.PropertyExists(this.projectSettingsCollection, nameof(wnd.createCompStyleFile)))
             {
-                wnd.createCompStyleFile.IsChecked = store.GetBoolean(projectSettingsCollection, nameof(wnd.createCompStyleFile));
+                wnd.createCompStyleFile.IsChecked = store.GetBoolean(this.projectSettingsCollection, nameof(wnd.createCompStyleFile));
             }
-            if (store.PropertyExists(projectSettingsCollection, nameof(wnd.createCompTemplateFile)))
+            if (store.PropertyExists(this.projectSettingsCollection, nameof(wnd.createCompTemplateFile)))
             {
-                wnd.createCompTemplateFile.IsChecked = store.GetBoolean(projectSettingsCollection, nameof(wnd.createCompTemplateFile));
+                wnd.createCompTemplateFile.IsChecked = store.GetBoolean(this.projectSettingsCollection, nameof(wnd.createCompTemplateFile));
             }
-            if (store.PropertyExists(projectSettingsCollection, nameof(wnd.createCompTestFile)))
+            if (store.PropertyExists(this.projectSettingsCollection, nameof(wnd.createCompTestFile)))
             {
-                wnd.createCompTestFile.IsChecked = store.GetBoolean(projectSettingsCollection, nameof(wnd.createCompTestFile));
+                wnd.createCompTestFile.IsChecked = store.GetBoolean(this.projectSettingsCollection, nameof(wnd.createCompTestFile));
             }
         }
 
         protected virtual void SaveSettings(AngularComponentWizardWindow wnd, string projectFullName)
         {
-            var store = GetProjectSettingsStore(projectFullName);
-            store.SetString(projectSettingsCollection, nameof(wnd.compStyleLanguage), $"{wnd.compStyleLanguage.SelectedValue}");
-            store.SetString(projectSettingsCollection, nameof(wnd.compSelectorPrefix), $"{wnd.compSelectorPrefix.Text}");
-            store.SetBoolean(projectSettingsCollection, nameof(wnd.createCompClassFile), wnd.createCompClassFile.IsChecked.GetValueOrDefault());
-            store.SetBoolean(projectSettingsCollection, nameof(wnd.createCompFolder), wnd.createCompFolder.IsChecked.GetValueOrDefault());
-            store.SetBoolean(projectSettingsCollection, nameof(wnd.createCompStyleFile), wnd.createCompStyleFile.IsChecked.GetValueOrDefault());
-            store.SetBoolean(projectSettingsCollection, nameof(wnd.createCompTemplateFile), wnd.createCompTemplateFile.IsChecked.GetValueOrDefault());
-            store.SetBoolean(projectSettingsCollection, nameof(wnd.createCompTestFile), wnd.createCompTestFile.IsChecked.GetValueOrDefault());
+            var store = this.GetProjectSettingsStore(projectFullName);
+            store.SetString(this.projectSettingsCollection, nameof(wnd.compStyleLanguage), $"{wnd.compStyleLanguage.SelectedValue}");
+            store.SetString(this.projectSettingsCollection, nameof(wnd.compSelectorPrefix), $"{wnd.compSelectorPrefix.Text}");
+            store.SetBoolean(this.projectSettingsCollection, nameof(wnd.createCompClassFile), wnd.createCompClassFile.IsChecked.GetValueOrDefault());
+            store.SetBoolean(this.projectSettingsCollection, nameof(wnd.createCompFolder), wnd.createCompFolder.IsChecked.GetValueOrDefault());
+            store.SetBoolean(this.projectSettingsCollection, nameof(wnd.createCompStyleFile), wnd.createCompStyleFile.IsChecked.GetValueOrDefault());
+            store.SetBoolean(this.projectSettingsCollection, nameof(wnd.createCompTemplateFile), wnd.createCompTemplateFile.IsChecked.GetValueOrDefault());
+            store.SetBoolean(this.projectSettingsCollection, nameof(wnd.createCompTestFile), wnd.createCompTestFile.IsChecked.GetValueOrDefault());
         }
 
         protected WritableSettingsStore GetProjectSettingsStore(string projectFullName)
         {
-            projectSettingsCollection = $"{rootSettingsCollection}\\{projectFullName.GetHashCode()}";
+            this.projectSettingsCollection = $"{rootSettingsCollection}\\{projectFullName.GetHashCode()}";
             SettingsManager settingsManager = new ShellSettingsManager(ServiceProvider.GlobalProvider);
-            WritableSettingsStore userSettingsStore = settingsManager.GetWritableSettingsStore(SettingsScope.UserSettings);
-            userSettingsStore.CreateCollection(projectSettingsCollection);
+            var userSettingsStore = settingsManager.GetWritableSettingsStore(SettingsScope.UserSettings);
+            userSettingsStore.CreateCollection(this.projectSettingsCollection);
             return userSettingsStore;
         }
     }

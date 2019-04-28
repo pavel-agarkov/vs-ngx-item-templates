@@ -1,4 +1,7 @@
-﻿v1.6
+﻿v1.7
+ - Visual Studio 2019 support
+
+v1.6
  - template for Angular Service
  - use dash as separator in file names
  - web/folder project type support

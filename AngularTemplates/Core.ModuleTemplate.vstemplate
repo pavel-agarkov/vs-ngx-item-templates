@@ -6,7 +6,7 @@
   <TemplateData>
     <DefaultName>module</DefaultName>
     <Name>Angular Module</Name>
-    <Description>Creates Angular 4/5 Module TypeScript file
+    <Description>Creates Angular 4+ Module TypeScript file
     </Description>
     <ProjectType>CSharp</ProjectType>
     <TemplateGroupID>AspNetCore</TemplateGroupID>
@@ -21,7 +21,7 @@
     <ProjectItem SubType="" TargetFileName="$moduleFileName$" ReplaceParameters="true">module.module.ts</ProjectItem>
   </TemplateContent>
   <WizardExtension>
-    <Assembly>AngularWizards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1375f77bdf30b87e</Assembly>
+    <Assembly>AngularWizards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=27dc356ccc4904c6</Assembly>
     <FullClassName>AngularWizards.AngularModule.AngularModuleWizard</FullClassName>
   </WizardExtension>
 </VSTemplate>
